@@ -1,0 +1,159 @@
+h5{
+    text-align: center;
+    font-weight: 800;
+}
+.Container{
+    flex-wrap: wrap;
+   flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    }
+    .css-1ps6pg7-MuiPaper-root {
+      font-size: 25px;
+      font-weight: 900;
+    }
+    .css-ahj2mt-MuiTypography-root {
+      font-size: 20px !important;
+      
+
+    }
+
+    button:focus { outline: none !important}
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800');
+
+    @media (min-width: 500px) {
+      .col-sm-6 {
+        width: 100%;
+      }
+    }
+    html, body {
+      height: 100%;
+      min-height: 18em;
+    }
+  
+    .split-pane {
+      padding-top: 1em;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      height: 100%;
+      width: 50%;
+      min-height: 9em;
+      font-size: 2em;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      font-weight:300;
+    ;
+    }
+    @media(min-width: 500px) {
+      .split-pane {
+        padding-top: 2em;
+        height: 100%;
+      }
+    }
+    .split-pane > div {
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      text-align: center;
+    }
+    .split-pane > div .text-content {
+      line-height: 1.6em;
+      margin-bottom: 1em;
+    }
+    .split-pane > div .text-content .big {
+      font-size: 2em;
+    }
+    .split-pane > div img {
+      height: 1.3em;
+    }
+    @media (max-width: 500px) {
+      .split-pane > div img {
+        display:none;
+      }
+    }
+    .split-pane button, .split-pane a.button {
+      font-family: 'Open Sans', sans-serif;
+      font-weight:800;
+      background: none;
+      border: 1px solid white;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      width: 15em;
+      padding: 0.7em;
+      font-size: 0.5em;
+      -moz-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      -webkit-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+      text-decoration: none;
+      color: white;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .split-pane button:hover, .split-pane a.button:hover {
+      text-decoration: none;
+      background-color: rgb(36, 22, 22);
+      border-color: rgb(190, 135, 169);
+      cursor: pointer;
+    }
+  
+    .big {
+      font-size: 2em;
+      font-weight:800;
+    }
+  
+    .bold {
+      text-transform:uppercase;
+    }
+  
+    .split {
+      height: 100%;
+      width: 50%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+    
+    /* Control the left side */
+    .left {
+      left: 0;
+      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74452/website-post-its.png");
+      
+    }
+    
+    /* Control the right side */
+    .right {
+      right: 0;
+      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74452/website-code.png");
+    }
+    
+    /* If you want the content centered horizontally and vertically */
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    
+    /* Style the image inside the centered container, if needed */
+    .centered img {
+      width: 150px;
+      border-radius: 50%;
+    }
+    
