@@ -148,7 +148,6 @@ function DashBoardContent() {
   function handleChange(e) {
     setMonthValue(e.target.value);
   }
-  // console.log(apiData[index]?.E_stats.length);
   useEffect(() => {
     for (let i = 0; i < apiData[index]?.stats.length; i++) {
       if (apiData[index]?.stats[i].month == monthValue) {

@@ -13,8 +13,6 @@ const Container = styled(FormGroup)`
         margin-top: 20px
     }
 `;
-
-
 export default function CreateUsers() {
   const [createdBy, setCreatedBy] = useState("ADMIN")
   const [email, setEmail] = useState("")
@@ -73,7 +71,6 @@ export default function CreateUsers() {
   }
 
   return (
-
     <Box
       sx={{
         display: 'flex',
@@ -86,12 +83,9 @@ export default function CreateUsers() {
         },
       }}
     >
-
       <Paper elevation={3} >
-
         <Container>
           <Typography variant="h4" style={{ textAlign: 'center' }}>Add User</Typography>
-
           <FormControl>
             <InputLabel htmlFor="my-input">Email</InputLabel>
             <Input value={email}
@@ -109,8 +103,7 @@ export default function CreateUsers() {
               name='role'
               value={role}
               label="Age"
-              onChange={(e) => setRole(e.target.value)}
-            >
+              onChange={(e) => setRole(e.target.value)}>
               <MenuItem value={'TL'}>TL</MenuItem>
               <MenuItem value={'T-SDE'}>T-SDE</MenuItem>
               <MenuItem value={'A-SDE'}>A-SDE</MenuItem>

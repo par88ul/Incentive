@@ -2,7 +2,6 @@ import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import { Box, Modal } from '@mui/material';
-import { Typography } from '@mui/material';
 import { useState, useEffect } from "react";
 import {
   Table,
@@ -12,8 +11,6 @@ import {
   TableBody,
   styled,
 } from "@mui/material";
-
-
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import AdminUser from './AdminUser';
@@ -64,9 +61,6 @@ export default function TemporaryDrawer({ apiData, index }) {
   useEffect(() => {
     setPermissions(apiData[index]?.permission)
   }, [apiData])
-
-
-
   function handleDelete(index) {
     axios
       .delete(`http://localhost:8000/api/products/${index}`)
@@ -74,13 +68,10 @@ export default function TemporaryDrawer({ apiData, index }) {
         fetchuser();
       });
   }
-
   function handleStat(index) {
     localStorage.setItem("index", index);
     navigate(`/admin/addstats/${index}`);
-
   }
-
   const [state, setState] = React.useState({
     bottom: false,
   });

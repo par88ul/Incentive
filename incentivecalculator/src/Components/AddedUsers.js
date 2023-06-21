@@ -145,15 +145,18 @@ function DashboardContent() {
     setStatsTypeValue("")
   }
 
-
-
   const navigate = useNavigate();
   function Logout() {
     navigate("/")
   }
 
   const getStatData = () => {
-    setStatsData(JSON.parse(localStorage.getItem("cardStatsData")))
+    const statsData = JSON.parse(localStorage.getItem("cardStatsData"))
+    if(statsData){
+      setStatsData(statsData)
+    }else{
+      setStatsData([])
+    }
   }
 
   React.useEffect(() => {
@@ -304,7 +307,7 @@ function DashboardContent() {
                 </THead>
               </TableHead>
               <TableBody>
-                {statsData.map((user, index) => (
+                {statsData && statsData.map((user, index) => (
                   <TRow key={user._id}>
                     <TableCell>{user.statsTypeValue}</TableCell>
                     <TableCell>{user.statsMaxValue}</TableCell>

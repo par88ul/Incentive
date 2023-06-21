@@ -57,7 +57,7 @@ export default function AddUserStats() {
   const [open, setOpen] = React.useState(false);
   const [apiData, setApiData] = useState("");
   const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('emailOfEditer')) || '');
-  const note = statsLocalstorgeData.find((item) => item.id === id)
+  const note = statsLocalstorgeData?.find((item) => item.id === id)
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(employeeStats));
   }, [employeeStats]);
@@ -125,12 +125,9 @@ export default function AddUserStats() {
       console.log("------> old stats", res.data.stats)
     });
   }
-
-
   useEffect(() => {
     getOld()
   }, [old])
-
 
   return (
     <>
@@ -164,7 +161,7 @@ export default function AddUserStats() {
             marginTop: "20px",
           }}
         >
-          {statsLocalstorgeData.map((val) => (
+          {statsLocalstorgeData?.map((val) => (
             <Card
               key={val.statsTypeValue}
               sx={{
@@ -260,8 +257,6 @@ export default function AddUserStats() {
           </StyledTable>
 
         ))}
-
-
       </Box>
 
     </>

@@ -12,8 +12,6 @@ const Container = styled(FormGroup)`
         margin-top: 20px
     }
 `;
-
-
 export default function AdminUser({apiData,index}) {
   const [createdBy, setCreatedBy] = useState(apiData[index].email) 
   const [email, setEmail] = useState("")
