@@ -29,16 +29,32 @@ export default function CreateUsers() {
   )
   const [parameterPermission, setParameterPermission] = useState(
     {
-      create: false,
-      read: false,
-      update: false,
-      delete: false,
+      Create: false,
+      Read: false,
+      Update: false,
+      Delete: false,
     }
   )
   const [stats, setstats] = useState([])
   const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const savedPermission = [
+      {
+        permissionName: "User Permission",
+        Create: permission.Create,
+        Read: permission.Read,
+       Update: permission.Update,
+       Delete: permission.Delete,
+      },     {
+        permissionName: "Param Permission",
+        Create: parameterPermission.Create,
+        Read: parameterPermission.Read,
+       Update: parameterPermission.Update,
+       Delete: parameterPermission.Delete,
+      }
+    ]
     try {
       const response = await axios.post('http://localhost:8000/api/products', {
         createdBy: createdBy,
@@ -46,8 +62,7 @@ export default function CreateUsers() {
         lastUpdatedBy: lastUpdatedBy,
         password: password,
         role: role,
-        permission: permission,
-        parameterPermission: parameterPermission,
+        savedPermission,
         stats: stats
       });
     }
@@ -160,42 +175,42 @@ export default function CreateUsers() {
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={parameterPermission.create}
+                  checked={parameterPermission.Create}
                   onChange={handleParameterPermissionChange}
-                  name="create"
+                  name="Create"
                 />
               }
-              label="create"
+              label="Create"
             />
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={parameterPermission.read}
+                  checked={parameterPermission.Read}
                   onChange={handleParameterPermissionChange}
-                  name="read"
+                  name="Read"
                 />
               }
-              label="read"
+              label="Read"
             />
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={parameterPermission.update}
+                  checked={parameterPermission.Update}
                   onChange={handleParameterPermissionChange}
-                  name="update"
+                  name="Update"
                 />
               }
-              label="update"
+              label="Update"
             />
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={parameterPermission.delete}
+                  checked={parameterPermission.Delete}
                   onChange={handleParameterPermissionChange}
-                  name="delete"
+                  name="Delete"
                 />
               }
-              label="delete"
+              label="Delete"
             />
           </Box>
           <FormControl >

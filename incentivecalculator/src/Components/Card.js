@@ -122,7 +122,6 @@ export default function AddUserStats() {
   const getOld = () => {
     axios.get(`http://localhost:8000/api/products/${indexes}`).then((res) => {
       setOld(res.data.stats);
-      console.log("------> old stats", res.data.stats)
     });
   }
   useEffect(() => {
@@ -237,7 +236,7 @@ export default function AddUserStats() {
               <TableHead>
                 <THead>
                   <TableCell>Parameter Type</TableCell>
-                  <TableCell> Max Value</TableCell>
+                  <TableCell> Given Value</TableCell>
                 </THead>
               </TableHead>
               <TableBody>
@@ -258,7 +257,6 @@ export default function AddUserStats() {
 
         ))}
       </Box>
-
     </>
   );
 }

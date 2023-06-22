@@ -1,6 +1,6 @@
 
 import axios from "axios";
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { FormControlLabel, FormGroup, FormControl, InputLabel, Input, Button, styled, Typography, Paper, Box, Checkbox } from '@mui/material';
@@ -37,6 +37,21 @@ export default function AdminUser({apiData,index}) {
   const [stats, setstats] = useState([])
   const handleSubmit = async () => {
     window.location.reload(true)
+    const savedPermission = [
+      {
+        permissionName: "User Permission",
+        Create: permission.Create,
+        Read: permission.Read,
+       Update: permission.Update,
+       Delete: permission.Delete,
+      },     {
+        permissionName: "Param Permission",
+        Create: parameterPermission.Create,
+        Read: parameterPermission.Read,
+       Update: parameterPermission.Update,
+       Delete: parameterPermission.Delete,
+      }
+    ]
     try {
       const response = await axios.post('http://localhost:8000/api/products', {
         createdBy: createdBy,
@@ -44,8 +59,7 @@ export default function AdminUser({apiData,index}) {
         lastUpdatedBy: lastUpdatedBy,
         password: password,
         role: role,
-        permission: permission,
-        parameterPermission: parameterPermission,
+        savedPermission,
         stats: stats
       });
     }
@@ -155,42 +169,42 @@ export default function AdminUser({apiData,index}) {
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={parameterPermission.create}
+                  checked={parameterPermission.Create}
                   onChange={handleParameterPermissionChange}
-                  name="create"
+                  name="Create"
                 />
               }
-              label="create"
+              label="Create"
             />
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={parameterPermission.read}
+                  checked={parameterPermission.Read}
                   onChange={handleParameterPermissionChange}
-                  name="read"
+                  name="Read"
                 />
               }
-              label="read"
+              label="Read"
             />
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={parameterPermission.update}
+                  checked={parameterPermission.Update}
                   onChange={handleParameterPermissionChange}
-                  name="update"
+                  name="Update"
                 />
               }
-              label="update"
+              label="Update"
             />
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={parameterPermission.delete}
+                  checked={parameterPermission.Delete}
                   onChange={handleParameterPermissionChange}
-                  name="delete"
+                  name="Delete"
                 />
               }
-              label="delete"
+              label="Delete"
             />
           </Box>
           <FormControl >

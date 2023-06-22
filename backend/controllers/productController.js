@@ -28,8 +28,7 @@ const product_create = async (req, res) => {
         lastUpdatedBy: req.body.lastUpdatedBy,
         password: req.body.password,
         role: req.body.role,
-        permission: req.body.permission,
-        parameterPermission: req.body.parameterPermission,
+        savedPermission: req.body.savedPermission,
         stats: req.body.stats
         
       });
@@ -51,8 +50,7 @@ const product_update = async (req, res) => {
           lastUpdatedBy: req.body.lastUpdatedBy,
           password: req.body.password,
           role: req.body.role,
-          permission: req.body.permission,
-          parameterPermission: req.body.parameterPermission,
+          savedPermission: req.body.savedPermission,
           stats: req.body.stats
         };
     

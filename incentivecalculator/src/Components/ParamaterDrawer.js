@@ -120,19 +120,18 @@ export default function ParamaterDrawer({ apiData, index }) {
         };
         statsCopy.splice(statsIndex, 1, stat)
         localStorage.setItem("cardStatsData", JSON.stringify(statsCopy))
-        setStatsTypeValue("")
+        setIsUpdate(false)
         setStatsMaxValue("")
+        setStatsTypeValue("")
         handleClose()
         getStatData()
-
     };
-
     useEffect(() => {
-        setPermissions(apiData[index]?.parameterPermission)
+        setPermissions(apiData[index]?.savedPermission[1])
     }, [apiData])
     return (
         <div>
-            {permissions?.create ?
+            {permissions?.Create ?
                 <Button variant="contained" color="secondary"
                     style={{ marginRight: 10 }}
                     onClick={handleOpen}
@@ -201,7 +200,7 @@ export default function ParamaterDrawer({ apiData, index }) {
                                             <TableCell>{user.createdBy}</TableCell>
                                             <TableCell>{user.updatedBy}</TableCell>
                                             <TableCell>
-                                                {permissions?.update ? <Button
+                                                {permissions?.Update ? <Button
                                                     color="primary"
                                                     variant="contained"
                                                     style={{ marginRight: 10 }}
@@ -216,7 +215,7 @@ export default function ParamaterDrawer({ apiData, index }) {
                                                 >
                                                     Edit Stats
                                                 </Button> : <Button disabled> Edit Stats</Button>}
-                                                {permissions?.delete ? <Button
+                                                {permissions?.Delete ? <Button
                                                     color="secondary"
                                                     variant="contained"
                                                     onClick={() => handleParamDelete(index)}

@@ -6,8 +6,16 @@ const productSchema = new mongoose.Schema({
   lastUpdatedBy: String,
   password: String,
   role: String,
-  permission: Object,
-  parameterPermission:Object,
+  savedPermission: [
+    {
+      permissionName: String,
+        Create: Boolean,
+        Read: Boolean,
+        Update: Boolean,
+        Delete: Boolean,
+       
+      },
+  ],
   stats: Object
 });
 

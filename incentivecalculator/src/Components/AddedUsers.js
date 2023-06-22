@@ -115,7 +115,7 @@ function DashboardContent() {
   function handleOpen() {
     setModal(true);
   }
-
+console.log(isUpdate,'up')
   function handleSaveData() {
     setStatsData((prev) => [
       ...prev,
@@ -138,8 +138,6 @@ function DashboardContent() {
 
     const newStatsAdded = [...statsData, newStat]
     localStorage.setItem('cardStatsData', JSON.stringify(newStatsAdded))
-
-
     handleClose();
     setStatsMaxValue("")
     setStatsTypeValue("")
@@ -182,7 +180,9 @@ function DashboardContent() {
     localStorage.setItem("cardStatsData", JSON.stringify(statsCopy))
     handleClose()
     getStatData()
-
+    setIsUpdate(false)
+    setStatsMaxValue("")
+    setStatsTypeValue("")
   };
 
   return (
@@ -273,7 +273,8 @@ function DashboardContent() {
               />
               <br />
               <br />
-              <Button className='button' style={{ width: "300px" }} variant="contained" color="primary" onClick={!isUpdate ? handleSaveData : handleStatsUpdate} >
+              <Button className='button' style={{ width: "300px" }} variant="contained" color="primary"
+               onClick={!isUpdate ? handleSaveData:handleStatsUpdate} >
                 save
               </Button>
             </Box>

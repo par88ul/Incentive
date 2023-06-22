@@ -156,7 +156,7 @@ function DashBoardContent() {
       }
     }
   }, [monthValue]);
-  console.log(apiData[index]?.email, "mail")
+
   React.useEffect(() => {
     if (progressBarValue > 300) {
       setIncentive(incentive * 2);
@@ -288,9 +288,9 @@ function DashBoardContent() {
                           <SemiCircleProgressBar
                             className={classes.progressBar}
                             percentage={
-                              (Number((result.value /
+                              ((result.value /
                                 cardStatsData[index]?.statsMaxValue) *
-                                100).toFixed(1))
+                                100).toFixed(2)
                             }
                             showPercentValue
                           />

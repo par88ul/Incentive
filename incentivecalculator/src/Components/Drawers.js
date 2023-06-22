@@ -59,7 +59,7 @@ export default function TemporaryDrawer({ apiData, index }) {
     });
   }
   useEffect(() => {
-    setPermissions(apiData[index]?.permission)
+    setPermissions(apiData[index]?.savedPermission[0])
   }, [apiData])
   function handleDelete(index) {
     axios
@@ -86,9 +86,10 @@ export default function TemporaryDrawer({ apiData, index }) {
   useEffect(() => {
     localStorage.setItem('emailOfEditer', JSON.stringify(apiData[index]?.email||[]))
   }, [apiData])
+
+
   return (
     <div>
-
       <br />
       {permissions?.Create ?
         <Box>
@@ -118,7 +119,6 @@ export default function TemporaryDrawer({ apiData, index }) {
             <StyledTable>
               <TableHead>
                 <THead>
-
                   <TableCell>Email</TableCell>
                   <TableCell>CreatedBy</TableCell>
                   <TableCell>Password</TableCell>
